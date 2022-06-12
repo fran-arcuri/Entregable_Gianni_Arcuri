@@ -1,0 +1,23 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h3>Pagina de Estudiantes</h3>
+
+<h1>Estamos buscando los estudiantes con {{horasEstudio}} horas de estudio.</h1>
+{% if datos %}
+
+{% for c in datos %}
+<ul>
+    <li>Nombre: {{c.nombre}}</li>
+    <li>Apellido: {{c.apellido}}</li>
+    <li>Edad: {{c.edad}}</li>
+    <li>Horas de estudio: {{c.horasEstudio}}</li>
+    <li>Que estudia: {{c.queEstudia}}</li>
+    <br>
+    {% endfor %}
+</ul>
+
+{% endif %}
+
+{% endblock %}

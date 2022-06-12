@@ -1,0 +1,20 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h3>Formulario de Universidades</h3>
+
+{% if miFormulario.errors %}
+<p style="color: red;">Estan mal los datos, revisar.</p>
+{% endif %}
+
+<form action="{% url 'universidadesCrear' %}" method="POST"> {% csrf_token %}
+    <h4>Ingrese los datos.</h4>
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
+
+    <input type="submit" value="Enviar">
+</form>
+
+{% endblock %}

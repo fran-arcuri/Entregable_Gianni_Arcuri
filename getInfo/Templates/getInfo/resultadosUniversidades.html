@@ -1,0 +1,19 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<h3>Pagina de Universidades</h3>
+
+<h1>Estamos buscando las universidades que requieren de {{aniosDeEstudio}} anios de estudio.</h1>
+{% if datos %}
+
+{% for u in datos %}
+<ul>
+    <li>Universidad de: {{u.universidadDe}}</li>
+    <li>Anios de estudio: {{u.aniosDeEstudio}}</li>
+    <br>
+    {% endfor %}
+</ul>
+
+{% endif %}
+{% endblock %}
